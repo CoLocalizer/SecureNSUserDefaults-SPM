@@ -23,7 +23,10 @@ let package = Package(
                 .product(name: "CocoaSecurity", package: "CocoaSecurity")
             ],
             path: "Sources/SecureNSUserDefaults",
-            publicHeadersPath: "."
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
         )
     ]
 )
