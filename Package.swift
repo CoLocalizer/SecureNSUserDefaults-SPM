@@ -13,9 +13,7 @@ let package = Package(
             targets: ["SecureNSUserDefaults"]
         ),
     ],
-    dependencies: [
-        // CocoaSecurity is now included locally in Sources
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "SecureNSUserDefaults",
@@ -24,9 +22,8 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("."),
-                .headerSearchPath("CocoaSecurity") // 👈 для доступу до CocoaSecurity.h
+                .headerSearchPath("CocoaSecurity")
             ]
         )
     ]
 )
-
