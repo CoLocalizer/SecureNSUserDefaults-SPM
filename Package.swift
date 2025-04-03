@@ -22,7 +22,8 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("."),
-                .headerSearchPath("CocoaSecurity")
+                .headerSearchPath("CocoaSecurity"),
+                .headerSearchPath("Base64")
             ]
         )
     ]
