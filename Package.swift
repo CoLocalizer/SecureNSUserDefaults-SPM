@@ -14,18 +14,17 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/kelp404/CocoaSecurity.git", from: "1.2.1")
+        // CocoaSecurity is now included locally in Sources
     ],
     targets: [
         .target(
             name: "SecureNSUserDefaults",
-            dependencies: [
-                .product(name: "CocoaSecurity", package: "CocoaSecurity")
-            ],
+            dependencies: [],
             path: "Sources/SecureNSUserDefaults",
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("CocoaSecurity") // 👈 для доступу до CocoaSecurity.h
             ]
         )
     ]
